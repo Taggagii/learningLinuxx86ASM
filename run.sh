@@ -4,6 +4,7 @@ if [ $# -ne 1 ]; then
     exit 1;
 fi
 
+# if the user passes in a file that does not exist, tell them and throw an error
 if [ ! -f "$1" ]; then
     echo "File '$1' does not exist";
     exit 1;
@@ -12,6 +13,7 @@ fi
 extension="${1##*.}"
 filename="${1%.*}"
 
+# if the file extension passed in is not '.asm' tell the user and throw an error
 if [ $extension != 'asm' ]; then
     echo "The filename must be of type '.asm'";
     exit 1;
