@@ -26,5 +26,5 @@ func: ; if we call a function in our function then we would overwrite EBP and th
 
         ; this portion is known as the epologue
     mov esp, ebp                    ; puts back the return location into the stack for ret to use
-    pop ebp                         ; pop off the previous return location from the stack so we can return the EBP to it's starting state
+    pop ebp                         ; pop off the previous return location from the stack so we can return the EBP (extended base pointer) to it's starting state
     ret

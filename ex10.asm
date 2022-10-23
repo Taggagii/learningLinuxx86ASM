@@ -9,9 +9,10 @@ extern printf
 section .data
     msg db "Testing %i...", 0x0a, 0x00
 
+section .text
 main:
     push ebp
-    mov ebp, esp
+    mov ebp, esp                ; set the extended base pointer to the value of the extended source pointer
     
     push 123                    ; first argument
     push msg                    ; second argument
