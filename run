@@ -23,7 +23,9 @@ fi
 nasm -f elf $1 && \
 
 # link the object file and create an executable
-ld -m elf_i386 -s -o $filename "${filename}.o" && \
+# ld -m elf_i386 -s -o $filename "${filename}.o" && \
+gcc -m32 "${filename}.o" -o ${filename} && \
+
 
 # clean up the object file 
 rm "${filename}.o" && \
