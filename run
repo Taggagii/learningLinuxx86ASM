@@ -19,7 +19,7 @@ if [ $extension != 'asm' ]; then
     exit 1;
 fi
 
-# compile the code into an ELF object 
+# compile the code into an ELF (Executable Linking Format) object 
 nasm -f elf $1 && \
 
 # link the object file and create an executable
@@ -31,5 +31,9 @@ rm "${filename}.o" && \
 # run the code
 ./$filename
 
-# clean up the executable
-rm "$filename"
+# print the exist status
+echo "Program exited with status code: $?"
+
+# remove executable
+rm $filename
+
