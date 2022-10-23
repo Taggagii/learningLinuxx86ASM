@@ -24,7 +24,7 @@ helloWorlder:
     
     ; if counter < 5
     cmp byte[counter], 0
-    jl continuteSection
+    jl continueSection
 
     ; decrement counter and write msg to stdout
     dec byte[counter]
@@ -38,7 +38,7 @@ helloWorlder:
     call helloWorlder
 
     ; else
-    continuteSection:
+    continueSection:
 
     ; return the stack to the point it was at when we first entered the function
     mov esp, ebp
